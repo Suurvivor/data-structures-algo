@@ -1,0 +1,27 @@
+
+a) Utworzenie słownika Biblioteki - słownik jest pusty gdy nie ma nic w pliku ;)
+# pobiera arg file_name czyli nazwe pliku jezeli istnieje plik to odczytuje kazda linijke po koleji przy czym pomija 1linijke z pliku i dodaje slownik do glownego slownika
+# po czym zwraca go, jezeli nie ma pliku zwraca pusty slownik 
+def odczytaj_z_pliku(file_name = "biblioteka.txt"):
+    count = 0
+    temp_biblio = {}
+    try:
+        with open(file_name, "r") as file:
+            for line in file:
+                if count == 0:
+                    count += 1
+                    continue
+                arr_ksiazka = line.replace("\n", "").split(";") #id[0], title[1], author[2], quantity[3], pages[4], price[5]
+                temp_biblio[arr_ksiazka[0]] = {"title": arr_ksiazka[1], "author": arr_ksiazka[2], "quantity": arr_ksiazka[3], "pages": arr_ksiazka[4], "price": arr_ksiazka[5]}
+        return temp_biblio
+    except FileNotFoundError:
+        return temp_biblio
+
+biblioteka = odczytaj_z_pliku(nazwa_pliku)
+
+
+b) Dodawanie książek do biblioteki
+def dodaj_ksiazke(title, author, quantity, pages, price):
+    id = len(biblioteka) + 1
+    biblioteka[id] = ({"title": title, "author": author, "quantity": quantity, "pages": pages, "price": price})
+    print(f'Dodano ksiazke ID: {id} title: {title}, autor: {author}, ilosc: {quantity}, pages: {pages}, cena: {price} ')

@@ -1,0 +1,29 @@
+1. Odpowiedz na pytanie (1p):
+
+1.Jakiego programu zamierzam używać do pracy z językiem Python? (Tryb tekstowy oraz tryb interaktywny)
+
+1.Odpowiedz: Do pracy z jezykiem Python zamierzam używac Visual Studio Code lub PyCharm ale preferuje VSCode
+
+2)-Uruchom środowisko, w którym będziesz w stanie pracować w trybie interaktywnym z językiem Python. (0.5p)
+
+2.Odpowiedz: otwieram konsole i wpisuje: python
+    - jezeli nie zadziała trzeba określić dokładną scieżkę do pythona
+
+3. Uruchom środowisko, w którym będziesz w stanie pracować w trybie skryptowym w języku Python. (0.5p)
+3.Odpowiedz: Uruchom visual studio code, lub wpisz w konsoli: "code" lub uruchamian PyCharm i tworze plik z rozszerzeniem .py
+
+4. Tryb interaktywny - wykonaj operacje dodawania, odejmowania, mnożenia i dzielenia. Użyj różnych typów danych, jakie poznałeś/poznałaś do tej pory. (1p)
+
+4.odpowiedz:
+>>> 2+2
+4   
+>>> 2-0.4
+1.6 
+>>> 2*0.3
+0.6 
+>>> 6/2
+3.0
+
+5. Tryb skryptowy - napisz swój pierwszy skrypt, który wyświetla na ekranie napis: Hello, world! (1p)
+
+5.Odpowiedz: print('hello World')
