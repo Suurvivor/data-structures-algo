@@ -1,5 +1,30 @@
+nazwa_pliku = "biblioteka.txt"
+#dodaje ksiazke do słownika pobiera argumenty biblioteke, tytul, autora, ilosc, strony i cene, nie zwraca nic, na koniec printuje jaka ksiazke dodano
+def dodaj_ksiazke(biblio, title, author, quantity, pages, price):
+    id = len(biblio) + 1
+    biblio[id] = ({"title": title, "author": author, "quantity": quantity, "pages": pages, "price": price})
+    print(f'Dodano ksiazke ID: {id} title: {title}, autor: {author}, ilosc: {quantity}, pages: {pages}, cena: {price} ')
+#pobiera id oraz biblioteke szuka slownika po id ktory jest kluczem jak zmatchuje to usuwa jezeli nie to wywala blad ze nie znalazl
+def usun_ksiazke(id, biblio):
+    done = False
+    for ksiazka, data in biblio.items():
+        if int(ksiazka) == id:
+            del biblio[id]
+            print(f'usunieto ksiazke o ID = {ksiazka}')
+            done = True
+            break
+    if done == False:
+        print(f'nie znaleziono ksiazki o ID: {id}')
 
-a) Utworzenie słownika Biblioteki - słownik jest pusty gdy nie ma nic w pliku ;)
+#pobiera biblioteke, printuje kazdy slownik(ksiazke) z glownego slownika-bilbioteki
+def lista_ksiazek(biblio = {}):
+    ilosc_ksiazek = len(biblio)
+    if ilosc_ksiazek == 0:
+        print("biblioteka jest pusta")
+    else:
+        print(f"w bibliotece znajduje sie {ilosc_ksiazek} ksiazki")
+    for ksiazka, data in biblio.items():
+        print(f'ID: {ksiazka} Title: {data["title"]} Autor: {data["author"]} ilosc: {data["quantity"]} ilosc stron: {data["pages"]} cena: {data["price"]}')
 # pobiera arg file_name czyli nazwe pliku jezeli istnieje plik to odczytuje kazda linijke po koleji przy czym pomija 1linijke z pliku i dodaje slownik do glownego slownika
 # po czym zwraca go, jezeli nie ma pliku zwraca pusty slownik 
 def odczytaj_z_pliku(file_name = "biblioteka.txt"):
@@ -19,29 +44,6 @@ def odczytaj_z_pliku(file_name = "biblioteka.txt"):
 
 biblioteka = odczytaj_z_pliku(nazwa_pliku)
 
-
-b) Dodawanie książek do biblioteki
-#dodaje ksiazke do słownika pobiera argumenty biblioteke, tytul, autora, ilosc, strony i cene, nie zwraca nic, na koniec printuje jaka ksiazke dodano
-def dodaj_ksiazke(biblio, title, author, quantity, pages, price):
-    id = len(biblio) + 1
-    biblio[id] = ({"title": title, "author": author, "quantity": quantity, "pages": pages, "price": price})
-    print(f'Dodano ksiazke ID: {id} title: {title}, autor: {author}, ilosc: {quantity}, pages: {pages}, cena: {price} ')
-
-c) Usuwanie książek z biblioteki
-#pobiera id oraz biblioteke szuka slownika po id ktory jest kluczem jak zmatchuje to usuwa jezeli nie to wywala blad ze nie znalazl
-def usun_ksiazke(id, biblio):
-    done = False
-    for ksiazka, data in biblio.items():
-        if int(ksiazka) == id:
-            del biblio[id]
-            print(f'usunieto ksiazke o ID = {ksiazka}')
-            done = True
-            break
-    if done == False:
-        print(f'nie znaleziono ksiazki o ID: {id}')
-
-
-d) Wyszukiwanie książek
 #pobiera tytul i biblioteke, szuka po tytule w ksiazkach jak zmatchuje dodaje do tymczasowej tablicy znalezionych ksiazek pozniej printuje znalezione ksiazki jezeli nie znajdzie zadnej to wywala blad zwraca rowniez ta tablice z znalezionymi ksiazkami
 def szukaj_ksiazke(title, biblio):
     znalezione_ksiegi = []
@@ -55,18 +57,6 @@ def szukaj_ksiazke(title, biblio):
         return znalezione_ksiegi
     else:
         print(f'nie znaleziono ksiazki o tytule: {title}')
-e) Lista wszystkich książek w bibliotece
-#pobiera biblioteke, printuje kazdy slownik(ksiazke) z glownego slownika-bilbioteki
-def lista_ksiazek(biblio = {}):
-    ilosc_ksiazek = len(biblio)
-    if ilosc_ksiazek == 0:
-        print("biblioteka jest pusta")
-    else:
-        print(f"w bibliotece znajduje sie {ilosc_ksiazek} ksiazki")
-    for ksiazka, data in biblio.items():
-        print(f'ID: {ksiazka} Title: {data["title"]} Autor: {data["author"]} ilosc: {data["quantity"]} ilosc stron: {data["pages"]} cena: {data["price"]}')
-
-f) Cena książek dla danego id
 #pobiera id ksiazki, biblioteke, jezeli zmatrzuje id z kluczem to zwraca slownik jezeli nie znajdzie to none
 def znajdz_ksiege_po_id(id, biblio = {}):
     result = None
@@ -90,8 +80,7 @@ def oblicz_koszt_egzemplarzy(id, biblio):
         return calkowita_cena
     else:
         return None
-
-g) Cena książek w bibliotece
+    
 #pobiera biblioteke i oblicza koszt kazdej jednej w zaleznosci od jej egzemplarzy sumuje to i zwraca calkowity koszt
 def oblicz_koszt_calej_biblioteki(biblio = {}):
     calkowity_koszt_biblio = 0
@@ -100,7 +89,13 @@ def oblicz_koszt_calej_biblioteki(biblio = {}):
     return calkowity_koszt_biblio
 
 
-h) Interfejs użytkownika
+#pobiera biblioteke oraz nazwe pliku, wpisuje w nowej lini dane z kazdej ksiazki odpowiednio sformatowano id;tytul;autor;ilosc;strony;cena
+def zapisz_do_pliku(biblio = {}, file_name = "biblioteka.txt"):
+    with open(file_name, "w") as file:
+        for ksiazka, data in biblio.items():
+            file.write(f'\n{ksiazka};{data["title"]};{data["author"]};{data["quantity"]};{data["pages"]};{data["price"]}')
+    print(f'Zapisano ksiazki do pliku "{file_name}"')
+
 
 #glowna funckja pozwalajaca uzytkownikowi kozystac z wyzej wymienionych funkcji przy cyzm pobiera odpowiednioo dane przed wywolaniem ich.
 def main():  
@@ -158,37 +153,3 @@ def main():
 
 while True:
     main()
-i) Obsługa niepoprawnych danych wejściowych, zastosowano w nieprawidlowym podnaiu id przy usuwaniu czy wyszukiwaniu
-
-j) Zapisywanie i Wczytywanie Biblioteki
-# pobiera arg file_name czyli nazwe pliku jezeli istnieje plik to odczytuje kazda linijke po koleji przy czym pomija 1linijke z pliku i dodaje slownik do glownego slownika
-# po czym zwraca go, jezeli nie ma pliku zwraca pusty slownik 
-def odczytaj_z_pliku(file_name = "biblioteka.txt"):
-    count = 0
-    temp_biblio = {}
-    try:
-        with open(file_name, "r") as file:
-            for line in file:
-                if count == 0:
-                    count += 1
-                    continue
-                arr_ksiazka = line.replace("\n", "").split(";") #id[0], title[1], author[2], quantity[3], pages[4], price[5]
-                temp_biblio[int(arr_ksiazka[0])] = {"title": arr_ksiazka[1], "author": arr_ksiazka[2], "quantity": arr_ksiazka[3], "pages": arr_ksiazka[4], "price": arr_ksiazka[5]}
-        return temp_biblio
-    except FileNotFoundError:
-        return temp_biblio
-
-biblioteka = odczytaj_z_pliku(nazwa_pliku)
-
-#pobiera biblioteke oraz nazwe pliku, wpisuje w nowej lini dane z kazdej ksiazki odpowiednio sformatowano id;tytul;autor;ilosc;strony;cena
-def zapisz_do_pliku(biblio = {}, file_name = "biblioteka.txt"):
-    with open(file_name, "w") as file:
-        for ksiazka, data in biblio.items():
-            file.write(f'\n{ksiazka};{data["title"]};{data["author"]};{data["quantity"]};{data["pages"]};{data["price"]}')
-    print(f'Zapisano ksiazki do pliku "{file_name}"')
-
-k) Dokumentacja - skomentowałem wszystkie funckje ;)
-
-l) Testowanie i Weryfikacja - przetestowane dziala ;)
-
-m) Organizacja plików na moduły i pakiety - zorganizowane w folderze biblioteka
