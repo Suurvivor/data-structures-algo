@@ -1,0 +1,3 @@
+Program definiuje funkcję scalaj, która przyjmuje dwa posortowane ciągi liczb jako argumenty (można podac oddzielone spacja oraz lub przecinkiem)i zwraca scalony,
+posortowany ciąg liczb. Program iteruje przez oba ciągi, porównuje elementy i dodaje mniejszy element do wynikowego ciągu. Następnie program sprawdza,
+czy w którymś z ciągów pozostały jeszcze elementy, i dodaje je, jeśli tak.

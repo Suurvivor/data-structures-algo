@@ -1,0 +1,19 @@
+Wprowadzenie
+Kod przedstawia implementację algorytmu sortowania przez wybieranie w języku Python. Algorytm ten polega na wielokrotnym wybieraniu najmniejszego elementu z listy i przesuwaniu go na początek listy.
+
+Struktura kodu
+Funkcja findSmallest: Ta funkcja znajduje indeks najmniejszego elementu w danej liście.
+
+Funkcja selectionSort: Implementuje algorytm sortowania przez wybieranie. Tworzy nową listę, do której dodaje kolejno najmniejsze elementy z oryginalnej listy.
+
+Funkcja random_x_nums_and_sort: Generuje listę o zadanym rozmiarze zawierającą losowe liczby z przedziału [0.0, 1.0) i sortuje ją przy użyciu algorytmu sortowania przez wybieranie.
+
+Funkcja return_array: Przetwarza string zawierający liczby oddzielone przecinkami lub spacjami na listę liczb.
+
+Pętla główna while True: Obsługuje interakcję użytkownika poprzez menu. Umożliwia generowanie losowych liczb i ich sortowanie, wprowadzanie własnych danych do posortowania, oraz wyjście z programu.
+
+Pomiar czasu
+W kodzie zaimplementowano również pomiar czasu trwania sortowania dla algorytmu sortowania przez wybieranie. Czas ten jest wyświetlany w sekundach.
+
+Wybór opcji
+Użytkownik ma możliwość wyboru różnych opcji poprzez interaktywne menu. Może generować losowe liczby i sortować je, wprowadzać własne dane do posortowania, lub zakończyć program.

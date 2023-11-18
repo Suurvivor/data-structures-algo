@@ -45,25 +45,18 @@ def scalanie_ciagow(ciagA, ciagB):
 # 1,2,3,4,5 return [1, 2, 3, 4, 5]
 # 1 2 3 4 5 return [1, 2, 3, 4, 5]
 
-
 def return_array(str: str):
     result = ' '.join(str.split(',')).split()
     return result
 
-
-def main():
-    ciagA = []
-    ciagB = []
-    print('Podaj pierwszy posortowany ciag liczb (separowane przeciniem lub/oraz spacja)')
-    ciagA = return_array(str(input()))
-    print('Podaj drugi ciag posortowanych liczb (separowane przeciniem lub/oraz spacja)')
-    ciagB = return_array(str(input()))
-    print(f'CiagA: {ciagA} rozmiar = {len(ciagA)}')
-    print(f'CiagA: {ciagB} rozmiar = {len(ciagB)}')
-    print('Scalony ciag:')
-    result = scalanie_ciagow(ciagA, ciagB)
-    print(result)
-
-
-while True:
-    main()
+ciagA = []
+ciagB = []
+print('Podaj pierwszy posortowany ciag liczb (separowane przeciniem lub/oraz spacja)')
+ciagA = return_array(str(input()))
+print('Podaj drugi ciag posortowanych liczb (separowane przeciniem lub/oraz spacja)')
+ciagB = return_array(str(input()))
+print(f'CiagA: {ciagA} rozmiar = {len(ciagA)}')
+print(f'CiagA: {ciagB} rozmiar = {len(ciagB)}')
+print('Scalony ciag:')
+result = scalanie_ciagow(ciagA, ciagB)
+print(result)

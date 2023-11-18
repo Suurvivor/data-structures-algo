@@ -16,6 +16,5 @@ while (a != b):
         a -= b
     else:
         b -= a
-    print(f'a={a} b={b}')
 
 print(f"nawiejkszy wspolny dzielnik dwoch liczb = {a}")

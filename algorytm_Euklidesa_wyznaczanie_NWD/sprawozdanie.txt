@@ -1,0 +1,8 @@
+W folderze znajduję się schemat blokowy oraz kod algorytmu Euklidesa
+
+krótki opis działania:
+pobiera a i b dopóki któraś z tych zmiennych jest mniejsza bądz równa 0, uzytkownik musi podac zmienne a,b > 0
+
+dalej wykonuje pętle dopóki liczba a, nie jest równa b to sprawdza czy a jest wieksze od b jezeli tak to przypisuje wartość zmiennej a = a - b jezeli nie to b = b - a
+
+jezeli jest równa to kończy program i printuje NWD 
