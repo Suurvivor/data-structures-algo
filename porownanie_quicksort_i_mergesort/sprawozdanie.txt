@@ -1,0 +1,45 @@
+W skrócie program generuje 5 tablic z długością X podaną przez uzytkownika potem je sortuje algorytmami "Dziel i rządź" tkzw mergesort oraz "szybkie sorotwanie" tkzw quicksort, wykorzystuje do tego biblioteke numpy następnie wyswietla ile czasu zajeło każde z sortowań.
+sortowanie odbywa sie na tych samych wygenerowanych liczbach
+1 losowe liczby
+2 25 % posortowanych reszta losowo
+3 50 % posortowanych reszta losowo
+4 100 % posortowanych
+5 100% posorotwancyh odwrotnie
+
+
+Dłuższe sprawozdanie:
+1. Wstęp:
+Kod jest programem służącym do porównywania wydajności dwóch algorytmów sortowania: Quicksort oraz Mergesort.
+W pierwszej części sprawdza, czy biblioteka NumPy jest zainstalowana. Jeśli nie, prosi użytkownika o instalację.
+2. Funkcje sortujące:
+
+quick_sort i merge_sort wykorzystują funkcje sortujące z biblioteki NumPy, mierząc czas sortowania.
+3. Funkcje generujące tablice:
+
+wygeneruj_czesciowo_posortowana_tablice: Tworzy tablicę z losowymi i częściowo posortowanymi elementami.
+random_x_nums_return_array: Generuje tablicę z losowymi liczbami.
+return_array: Konwertuje string z liczbami oddzielonymi przecinkami na tablicę.
+4. Funkcja główna (main):
+
+Generuje różne rodzaje tablic do porównania (losowe, częściowo posortowane).
+Mierzy czas sortowania dla obu algorytmów dla każdego przypadku.
+Wyświetla wyniki sortowania dla każdego przypadku.
+5. Pętla interfejsu użytkownika:
+
+Program działa w nieskończonej pętli, pozwalając użytkownikowi na wybór różnych funkcji.
+0: Wyjście z programu.
+1: Porównanie algorytmów dla różnych rodzajów tablic wejściowych.
+6. Instalacja NumPy:
+
+Skrypt używa subprocess do próby instalacji NumPy, jeśli nie jest zainstalowane.
+Użytkownik jest pytany, czy chce dokonać instalacji.
+7. Uwagi:
+
+Zakłada się dostępność Pythona i pip w systemie.
+Zależy od dostępności modułu subprocess do instalacji NumPy.
+Może wymagać dostosowań w zależności od środowiska i preferencji użytkownika.
+8. Podsumowanie:
+
+Program umożliwia użytkownikowi porównanie wydajności algorytmów sortowania dla różnych rodzajów danych wejściowych.
+Przydatny do zrozumienia, jak różne algorytmy sortowania radzą sobie w różnych warunkach.
+W przypadku ewentualnych problemów z instalacją NumPy, użytkownik ma możliwość wyjścia z programu.

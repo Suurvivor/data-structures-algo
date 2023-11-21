@@ -69,7 +69,7 @@ def return_array(str: str):
     return result
 
 def main(nums_to_compare_size):
-    print('generowanie liczb do porównania...')
+    print(f'generowanie {nums_to_compare_size} liczb x5 (losowych, 25%, 50%, 100% posortowanych i 100% posorotwoancyh odwrotnie)')
     arr_of_random_nums = random_x_nums_return_array(nums_to_compare_size)
     arr_of_25_sorted_nums = wygeneruj_czesciowo_posortowana_tablice(nums_to_compare_size, 25)
     arr_of_50_sorted_nums = wygeneruj_czesciowo_posortowana_tablice(nums_to_compare_size, 50)
@@ -91,19 +91,19 @@ def main(nums_to_compare_size):
     print('zaczynam sortować przy uzyciu algorytmu "Szybkiego sortowania" 100% | odwrotnie posorotwanych liczb...')
     time_100_reverse_sorted_quick_sort = quick_sort(arr_of_100_reverse_sorted_nums)
     print('Done.')
-    print('zaczynam sortować przy uzyciu algorytmu "Dziel i rzadz" losowo wygenerowane liczby...')
+    print('zaczynam sortować przy uzyciu algorytmu "sortowanie przez scalanie" losowo wygenerowane liczby...')
     time_random_merge_sort = merge_sort(arr_of_random_nums)
     print('Done.')
-    print('zaczynam sortować przy uzyciu algorytmu "Dziel i rzadz" 25% posorotwanych liczb...')
+    print('zaczynam sortować przy uzyciu algorytmu "sortowanie przez scalanie" 25% posorotwanych liczb...')
     time_25_sorted_merge_sort = merge_sort(arr_of_25_sorted_nums)
     print('Done.')
-    print('zaczynam sortować przy uzyciu algorytmu "Dziel i rzadz" 50% posorotwanych liczb...')
+    print('zaczynam sortować przy uzyciu algorytmu "sortowanie przez scalanie" 50% posorotwanych liczb...')
     time_50_sorted_merge_sort = merge_sort(arr_of_50_sorted_nums)
     print('Done.')
-    print('zaczynam sortować przy uzyciu algorytmu "Dziel i rzadz" 100% posorotwanych liczb...')
+    print('zaczynam sortować przy uzyciu algorytmu "sortowanie przez scalanie" 100% posorotwanych liczb...')
     time_100_sorted_merge_sort = merge_sort(arr_of_100_sorted_nums)
     print('Done.')
-    print('zaczynam sortować przy uzyciu algorytmu "Dziel i rzadz" 100% | odwrotnie posorotwanych liczb...')
+    print('zaczynam sortować przy uzyciu algorytmu "sortowanie przez scalanie" 100% | odwrotnie posorotwanych liczb...')
     time_100_reverse_sorted_merge_sort = merge_sort(arr_of_100_reverse_sorted_nums)
     print('Done.')
 
@@ -125,13 +125,13 @@ def main(nums_to_compare_size):
     print(f'Mergesort: {time_100_reverse_sorted_merge_sort["czasSortowania"]} Sec')
 
 while True:
-    print('Program do porównywania dwóch algorytmów sortowania Szybkiego sortowania oraz Dziel i rządz')
+    print('Program do porównywania dwóch algorytmów sortowania Szybkiego sortowania oraz sortowania przez scalanie')
     print('0. aby wyjsc')
-    print('1. Porównaj liczby (całkowicie losowe, poprzez częściowo posortowane (25%, 50%, 100%, 100%, odwrotnie)')
+    print('1. Porównaj algorytmy liczby (całkowicie losowe, częściowo posortowane (25%, 50%, 100%, 100%, odwrotnie)')
     print('Wpisz numer funkcji do wykonania')
     choice = int(input())
     if choice == 1:
-        print('Podaj ile liczb chcesz porównać')
+        print('Podaj ile liczb chcesz wygenerować do porównania czasu sortowania algorytmów')
         x = int(input())
         main(x)
         # print(random_x_nums_and_sort(x))

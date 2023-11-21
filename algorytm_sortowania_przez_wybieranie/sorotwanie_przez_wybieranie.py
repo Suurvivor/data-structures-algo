@@ -35,7 +35,8 @@ def random_x_nums_and_sort(x):
 
 def return_array(str: str):
     result = ' '.join(str.split(',')).split()
-    return result
+    result2 = [float(num) for num in result]
+    return result2
 
 while True:
     print('0. aby wyjsc')
